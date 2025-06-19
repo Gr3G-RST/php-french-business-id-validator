@@ -1,10 +1,8 @@
 {
     "name": "gr3grst/php-french-business-id-validator",
     "description": "A PHP validator for French business ID including French VAT validator/calculator",
-    "require": {
-        "php": ">=5.3.3"
-    },
     "license":  "MIT",
+    "version": "1.0.0",
     "authors": [
         {
             "name": "Greg ROUSSAT",
@@ -13,6 +11,9 @@
             "role": "Developer"
         }
     ],
+    "require": {
+    "php": ">=5.3.3"
+    },
     "autoload": {
         "psr-4": {
             "gr3grst\\": "src/"
