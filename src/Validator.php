@@ -62,7 +62,7 @@ class Validator {
      * @param string $tva The VAT number to validate, which must follow the French format: "FR" + 2 alphanumeric characters + 9 digits.
      * @return bool Returns true if the VAT number is valid according to the format and checks, false otherwise.
      */
-    static function isTvaFr($tva) {
+    static function isVatFr($tva) {
         // Supprime les espaces et met en majuscules
         $tva = strtoupper(str_replace([' ', '-', '.', ','], '', $tva));
 
@@ -81,11 +81,11 @@ class Validator {
 
         // Calcule la clé attendue
         $sirenInt = (int)$siren;
-        $cleCalculée = (12 + 3 * ($sirenInt % 97)) % 97;
+        $calcKey = (12 + 3 * ($sirenInt % 97)) % 97;
 
         // Vérifie la clé : si elle est numérique
-        if (ctype_digit($cle)) {
-            return (int)$cle === $cleCalculée;
+        if (ctype_digit($key)) {
+            return (int)$key === $calcKey;
         }
 
         // Si la clé contient des lettres, il faut une table de conversion personnalisée (très rare, mais possible)
@@ -108,7 +108,7 @@ class Calculator {
      * @return string|false Returns the computed French VAT number in the format "FR[cle][SIREN]"
      *                      if the input SIREN is valid. Returns false if the SIREN is not valid.
      */
-    static function calculateTvaFr($siren) {
+    static function calculateVatFr($siren) {
         // Supprime les espaces, tirest, ...
         $siren = str_replace([' ', '-', '.', ','], '', $siren);
         // Vérifie que le SIREN est valide
@@ -118,10 +118,10 @@ class Calculator {
 
         // Calcule la clé attendue
         $sirenInt = (int)$siren;
-        $cle = (12 + 3 * ($sirenInt % 97)) % 97;
+        $key = (12 + 3 * ($sirenInt % 97)) % 97;
         // Vérifie la clé : si elle est numérique
-        if (ctype_digit($cle)) {
-            return 'FR'.$cle.$siren;
+        if (ctype_digit($key)) {
+            return 'FR'.$key.$siren;
         }
     }
 }
