@@ -53,5 +53,23 @@ This library suits all the needs for a real validation of business ID.
 *string* `$siren` The SIREN number \
 **returns**\
 *string|false* Returns the computed French VAT number in the format "FR[key][SIREN]" if the input SIREN is valid. Returns false if the SIREN is not valid.
+
+## Class : Refactor
+
+### Method : refactorSiren
+*Refactor a SIREN number - 9 digits and validate it with Luhn*
+
+**arguments**\
+*string* `$siren` The SIREN number to refactor \
+**returns**\
+*string|false* Returns the SIREN number if valid, false otherwise.
+
+### Method : refactorSiret
+*Refactor a SIREN number - 14 digits and validate it with Luhn*
+
+**arguments**\
+*string* `$siret` The SIRET number to refactor \
+**returns**\
+*string|false* Returns the SIRET number if valid, false otherwise.
 ---
 
