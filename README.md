@@ -1,22 +1,13 @@
 # PHP Validator #
 *A PHP validator for French business ID including French VAT validator/calculator*
 
-
-----------
-
-
 Authors
 - Greg ROUSSAT - https://github.com/Gr3G-RST
-
-
-----------
-
 
 This library suits all the needs for a real validation of business ID. 
 
 > composer require gr3grst/php-french-business-id-validator
 
-----------
 
 ## Class : Validator
 
@@ -71,5 +62,5 @@ This library suits all the needs for a real validation of business ID.
 *string* `$siret` The SIRET number to refactor \
 **returns**\
 *string|false* Returns the SIRET number if valid, false otherwise.
----
+
 
