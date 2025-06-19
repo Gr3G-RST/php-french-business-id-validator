@@ -20,9 +20,7 @@ This library suits all the needs for a real validation of business ID.
 
 ## Class : Validator
 
-### Methods
-
-#### isSiren
+### Method : isSiren
 
 *Validate a SIREN number - 9 digits + Luhn* \
 **arguments**\
@@ -30,7 +28,7 @@ This library suits all the needs for a real validation of business ID.
 **returns**\
 *bool* Returns true if the SIRET number is valid, false otherwise. 
 
-#### isSiret
+### Method : isSiret
 
 *Validate a SIRET number - 14 digits + Luhn* \
 **arguments**\
@@ -38,7 +36,7 @@ This library suits all the needs for a real validation of business ID.
 **returns**\
 *bool* Returns true if the SIRET number is valid, false otherwise.
 
-#### isVatFr
+### Method : isVatFr
 
 *Validates a French VAT (TVA) number.* \
 **arguments**\
@@ -48,9 +46,7 @@ This library suits all the needs for a real validation of business ID.
 
 ## Class : Calculator
 
-### Methods
-
-#### calculateVatFr
+### Method : calculateVatFr
 
 *Calculates the French VAT (TVA) number based on a given SIREN number.* \
 **arguments**\
