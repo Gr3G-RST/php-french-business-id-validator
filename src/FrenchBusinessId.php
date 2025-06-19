@@ -131,14 +131,14 @@ class Refactor {
         // Supprime les espaces, tirest, ...
         $string = str_replace([' ', '-', '.', ','], '', $string);
         // Vérifie que le SIREN est valide
-        (isSiren($string)) ? $resp = true : $resp = false;
+        (isSiren($string)) ? $resp = $string : $resp = false;
         return $resp;
     }
     static function refactorSiret($string) {
         // Supprime les espaces, tirest, ...
         $string = str_replace([' ', '-', '.', ','], '', $string);
         // Vérifie que le SIREN est valide
-        (isSiret($string)) ? $resp = true : $resp = false;
+        (isSiret($string)) ? $resp = $string : $resp = false;
         return $resp;
     }
 }
