@@ -21,24 +21,24 @@ This library suits all the needs for a real validation of business ID.
 ## Class : Validator
 
 ### Method : isSiren
+*Validate a SIREN number - 9 digits + Luhn*
 
-*Validate a SIREN number - 9 digits + Luhn* \
 **arguments**\
 *string* `$siren` The SIREN number \
 **returns**\
 *bool* Returns true if the SIRET number is valid, false otherwise. 
 
 ### Method : isSiret
+*Validate a SIRET number - 14 digits + Luhn*
 
-*Validate a SIRET number - 14 digits + Luhn* \
 **arguments**\
 *string* `$siret` The SIRET number \
 **returns**\
 *bool* Returns true if the SIRET number is valid, false otherwise.
 
 ### Method : isVatFr
+*Validates a French VAT (TVA) number.*
 
-*Validates a French VAT (TVA) number.* \
 **arguments**\
 *string* $tva The VAT number to validate, which must follow the French format: "FR" + 2 alphanumeric characters + 9 digits. \
 **returns**\
@@ -47,8 +47,8 @@ This library suits all the needs for a real validation of business ID.
 ## Class : Calculator
 
 ### Method : calculateVatFr
+*Calculates the French VAT (TVA) number based on a given SIREN number.* 
 
-*Calculates the French VAT (TVA) number based on a given SIREN number.* \
 **arguments**\
 *string* `$siren` The SIREN number \
 **returns**\
