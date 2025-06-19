@@ -1,4 +1,5 @@
-
+# Phpstrom #
+.idea/
 # Composer #
 /vendor/
 
