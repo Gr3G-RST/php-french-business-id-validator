@@ -2,17 +2,22 @@
     "name": "gr3grst/php-french-business-id-validator",
     "description": "A PHP validator for French business ID including French VAT validator/calculator",
     "license":  "MIT",
-    "version": "1.0.0",
+    "version": "stable",
+    "homepage": "https://github.com/Gr3G-RST/php-french-business-id-validator",
+    "readme": "./README.md",
     "authors": [
         {
             "name": "Greg ROUSSAT",
             "email": "greg@dotg.io",
-            "homepage": "http://dotg.io",
+            "homepage": "https://dotg.io",
             "role": "Developer"
         }
     ],
+    "support": {
+        "email": "greg@dotg.io"
+    },
     "require": {
-    "php": ">=5.3.3"
+        "php": ">=5.3.3"
     },
     "autoload": {
         "psr-4": {
