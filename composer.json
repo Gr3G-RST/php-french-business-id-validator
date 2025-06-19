@@ -1,0 +1,23 @@
+{
+    "name": "gr3grst/php-french-business-id-validator",
+    "description": "A PHP validator for French business ID including French VAT validator/calculator",
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.2"
+    },
+    "authors": [
+        {
+            "name": "Greg ROUSSAT",
+            "email": "greg@dotg.io",
+            "homepage": "http://dotg.io",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "gr3grst\\": "src/"
+        }
+    }
+}
