@@ -1,5 +1,9 @@
 # PHP French Business ID Tools #
-*A PHP validator for French business ID including French VAT validator/calculator*
+
+*A set of PHP classes with* : \
+- Validating for French business ID (SIRET/SIREN)
+- Refactoring for French business ID (SIRET/SIREN)
+- Calculating French VAT number from SIREN
 
 Authors
 - Greg ROUSSAT - https://github.com/Gr3G-RST
