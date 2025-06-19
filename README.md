@@ -6,7 +6,7 @@
 
 
 Authors
-- Greg ROUSSAT @Gr3G-RST
+- Greg ROUSSAT - https://github.com/Gr3G-RST
 
 
 ----------
@@ -18,17 +18,36 @@ This library suits all the needs for a real validation of business ID.
 
 ----------
 
-
-## Methods
-
+## Class : Validator
+### Methods
 #### isSiren
-*Validate a SIREN number - 9 digits + Luhn*
+*Validate a SIREN number - 9 digits + Luhn* \
+**arguments**\
+*string* `$siren` The SIREN number \
+**returns**\
+*bool* Returns true if the SIRET number is valid, false otherwise. 
 
-Arguments
+#### isSiret
+*Validate a SIRET number - 14 digits + Luhn* \
+**arguments**\
+*string* `$siret` The SIRET number \
+**returns**\
+*bool* Returns true if the SIRET number is valid, false otherwise.
 
-string  `$siren` The SIREN number
+#### isVatFr
+*Validates a French VAT (TVA) number.* \
+**arguments**\
+*string* $tva The VAT number to validate, which must follow the French format: "FR" + 2 alphanumeric characters + 9 digits. \
+**returns**\
+*bool* Returns true if the VAT number is valid according to the format and checks, false otherwise.
 
-**returns** bool 
-
+## Class : Calculator
+### Methods
+#### calculateVatFr
+*Calculates the French VAT (TVA) number based on a given SIREN number.* \
+**arguments**\
+*string* `$siren` The SIREN number \
+**returns**\
+*string|false* Returns the computed French VAT number in the format "FR[key][SIREN]" if the input SIREN is valid. Returns false if the SIREN is not valid.
 ---
 
