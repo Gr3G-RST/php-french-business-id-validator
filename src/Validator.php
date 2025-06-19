@@ -3,12 +3,17 @@
 namespace gr3grst;
 
 /**
- * A PHP validator for French business ID
- * It also include classes for checking / calculating VAT Number
- * @author Greg ROUSSAT https://github.com/Gr3G-RST
+ * A utility class for validating various types of French business identifiers
+ * such as SIREN, SIRET, and VAT (TVA) numbers.
  */
 class Validator {
 
+    /**
+     * Validates if the provided SIREN number is valid using the Luhn algorithm.
+     *
+     * @param string $siren The SIREN number as a string consisting of 9 digits.
+     * @return bool Returns true if the SIREN number is valid, false otherwise.
+     */
     static function isSiren($siren) {
         if (!preg_match('/^\d{9}$/', $siren)) {
             return false;
@@ -27,6 +32,12 @@ class Validator {
         return $sum % 10 === 0;
     }
 
+    /**
+     * Validates a SIRET number using the Luhn algorithm.
+     *
+     * @param string $siret The SIRET number to validate, which must be a 14-digit string.
+     * @return bool Returns true if the SIRET number is valid, false otherwise.
+     */
     static function isSiret($siret) {
         if (!preg_match('/^\d{14}$/', $siret)) {
             return false;
@@ -45,7 +56,13 @@ class Validator {
         return $sum % 10 === 0;
     }
 
-    static function isTvaFR($tva) {
+    /**
+     * Validates a French VAT (TVA) number.
+     *
+     * @param string $tva The VAT number to validate, which must follow the French format: "FR" + 2 alphanumeric characters + 9 digits.
+     * @return bool Returns true if the VAT number is valid according to the format and checks, false otherwise.
+     */
+    static function isTvaFr($tva) {
         // Supprime les espaces et met en majuscules
         $tva = strtoupper(str_replace([' ', '-', '.', ','], '', $tva));
 
@@ -75,4 +92,36 @@ class Validator {
         return false;
     }
 
+}
+
+/**
+ * A utility class for performing calculations related to French business numbers, including VAT (TVA)
+ * number computation based on SIREN validation.
+ */
+class Calculator {
+    /**
+     * Calculates the French VAT (TVA) number based on a given SIREN number.
+     *
+     * @param string $siren The SIREN number to compute the French VAT number for. The input can contain spaces,
+     *                      dashes, dots, or commas, which will be removed.
+     *
+     * @return string|false Returns the computed French VAT number in the format "FR[cle][SIREN]"
+     *                      if the input SIREN is valid. Returns false if the SIREN is not valid.
+     */
+    static function calculateTvaFr($siren) {
+        // Supprime les espaces, tirest, ...
+        $siren = str_replace([' ', '-', '.', ','], '', $siren);
+        // Vérifie que le SIREN est valide
+        if (!isSiren($siren)) {
+            return false;
+        }
+
+        // Calcule la clé attendue
+        $sirenInt = (int)$siren;
+        $cle = (12 + 3 * ($sirenInt % 97)) % 97;
+        // Vérifie la clé : si elle est numérique
+        if (ctype_digit($cle)) {
+            return 'FR'.$cle.$siren;
+        }
+    }
 }
