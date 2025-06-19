@@ -74,8 +74,7 @@ A set of PHP classes with : \
 <?php
 
 $test = new Validator();
-if ($test->isSiren('string')){ 
-    return true;
-} else { return false;}
+$result = ($test->isSiren('<SIREN number to validate>')) ? true : false;
+return $result;
 ````
 
