@@ -1,8 +1,10 @@
-# PHP Validator #
+# PHP French Business ID Tools #
 *A PHP validator for French business ID including French VAT validator/calculator*
 
 Authors
 - Greg ROUSSAT - https://github.com/Gr3G-RST
+
+Licence : MIT
 
 This library suits all the needs for a real validation of business ID. 
 
