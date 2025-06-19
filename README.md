@@ -1,17 +1,16 @@
 # PHP French Business ID Tools #
 
-*A set of PHP classes with* : \
+A set of PHP classes with : \
 - Validating for French business ID (SIRET/SIREN)
 - Refactoring for French business ID (SIRET/SIREN)
 - Calculating French VAT number from SIREN
 
-Authors
+**Authors**
 - Greg ROUSSAT - https://github.com/Gr3G-RST
 
-Licence : MIT
+**Licence** : MIT
 
-This library suits all the needs for a real validation of business ID. 
-
+## Install ##
 > composer require gr3grst/php-french-business-id-validator
 
 
@@ -69,4 +68,14 @@ This library suits all the needs for a real validation of business ID.
 **returns**\
 *string|false* Returns the SIRET number if valid, false otherwise.
 
+## Examples ##
+
+```` php
+<?php
+
+$test = new Validator();
+if ($test->isSiren('string')){ 
+    return true;
+} else { return false;}
+````
 
